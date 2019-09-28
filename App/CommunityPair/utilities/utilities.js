@@ -40,17 +40,17 @@ export class TrainingSubmodule {
 
 export class Employee {
   id 
-  firstname
-  lastname
-  birthdate
-  location = []
+  firstname 
+  lastname  
+  birthdate //date
+  address //street name, barangay
   email
-  status
-  description
-  type
-  registrationdate
-  certifications = []
-  employers = []
+  status // pending, available, employed, idle
+  description //
+  jobdescription //maid, janitor ....
+  registrationdate //Date
+  certifications = [] //url
+  employers = [] //employer id
 }
 
 export class Employer {
