@@ -3,7 +3,7 @@ import { View, Text, StyleSheet,ListView } from "react-native";
 import {Employer} from "../../utilities/utilities"
 import CardView from '../../components/card'
 
-export default class TutorialCell extends Component {
+export default class ExamCell extends Component {
 
     constructor(props){
         super(props)
@@ -17,11 +17,11 @@ export default class TutorialCell extends Component {
     render() {
         if (this.state.item != null) {
             console.log("state %o", this.state)
-            console.log("name: %s", this.state.item.name)
+            console.log("name: %s", this.state.item.employer_id)
             return (
                 <View style={styles.entry}>
                     <CardView 
-                        name={this.state.item.name} 
+                        name={this.state.item.employer_id} 
                         />
                 </View>
             )

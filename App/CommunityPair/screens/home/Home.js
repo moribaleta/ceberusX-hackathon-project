@@ -1,44 +1,17 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet,ListView } from "react-native";
-import TutorialCell from "./TutorialCell"
-import {getSampleTrainingModule} from '../../utilities/utilities'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default class Home extends Component {
+import TutorialList from './TutorialList'
+import ExamList from '../exams/ExamList'
+import ExamView from "../exams/ExamViewer";
+import { getSampleExamModule } from "../../utilities/utilities";
 
-    state = {
-        list : []
-    }
+export default class Home extends Component{
 
-    init() {
-        super.init()
-        this.state.list = getSampleTrainingModule()
-    }
+  render(){
+    return(
+      <ExamView item={getSampleExamModule()[0]}/>
+    )
+  }
 
-    render() {
-        return (
-            <View style={styles.container}>
-                <ListView 
-                    style={styles.list}
-                    dataSource={this.state.list} 
-                    renderRow={(tutorial) => {
-                        return <TutorialCell props={tutorial} />
-                    }}
-                />
-            </View>
-        )
-    }
 }
-
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        
-    },
-    message : {
-
-    },
-    list: {
-
-    }
-})

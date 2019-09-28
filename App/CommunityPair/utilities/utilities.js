@@ -9,15 +9,17 @@ export function getSampleTrainingModule(){
   var items = []
   for(var i = 0; i < 10; i++) {
 
-    let module = TrainingModule()
+    let module = {}
     module.id           = i+""
     module.name         = "training name-" + i
     module.type         = "maid"
     module.createdby    = "user"
     module.imageUrl     = "https://images.halloweencostumes.com/products/41303/1-2/womens-traditional-maid-plus-size-costume.jpg"
     module.description  = "training module for name"
+
     items.push(module)
   }
+  console.log(items)
   return items
 }
 
@@ -28,6 +30,7 @@ export class TrainingModule {
   createdby
   imageUrl
   description
+  submodules = []
 }
 
 export class TrainingSubmodule {
@@ -77,7 +80,7 @@ export class Exam {
   createddate
 }
 
-class ExamEntry {
+class ExamField {
   id
   type 
   options = []
@@ -109,4 +112,47 @@ exam = {
     }
   ],
   createddate : Date
+}
+
+export function getSampleExamModule(){
+  var items = []
+  for(var i = 0; i < 3; i++) {
+
+    
+
+    let exam = {
+      id: i+"",
+      employer_id : "emp-"+i,
+      exam_date : new Date(),
+      entries : [
+        {
+          id: "0",
+          type: "text",
+          options : [],
+          labelname: "name",
+          value : ""
+        },
+        {
+          id: "1",
+          type: "text",
+          options : [],
+          labelname: "lastname",
+          value : ""
+        },
+        {
+          id: "2",
+          type: "dropdown",
+          options : ["employed","not employed"],
+          labelname: "status",
+          value : ""
+        }
+      ],
+      createddate : new Date(),
+      description : "Exam for medication"
+    }
+
+    items.push(exam)
+  }
+  console.log(items)
+  return items
 }
