@@ -1,0 +1,7 @@
+{
+  "name": "Livelyhood",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
