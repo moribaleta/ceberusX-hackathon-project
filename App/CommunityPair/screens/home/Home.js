@@ -9,6 +9,11 @@ export default class Home extends Component {
         list : []
     }
 
+    init() {
+        super.init()
+        this.state.list = getSampleTrainingModule()
+    }
+
     render() {
         return (
             <View style={styles.container}>

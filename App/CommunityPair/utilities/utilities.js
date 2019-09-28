@@ -58,7 +58,7 @@ export class Employer {
   name
   contactinfo
   email
-  location = []
+  address
   date
 }
 
