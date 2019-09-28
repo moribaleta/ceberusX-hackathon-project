@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet,Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableHighlight } from "react-native";
 
 export default class CardView extends Component {
 
@@ -7,7 +7,7 @@ export default class CardView extends Component {
         super(props)
         this.state = {
             name: props.name,
-            /* background  : props.imageUrl */
+            background  : props.image
         }
     }
 
@@ -19,7 +19,7 @@ export default class CardView extends Component {
         return (
             <View style={styles.entry}>
                 <Text style={styles.name}>{this.state.name}</Text>
-                <Image style={styles.background} source={{ uri: 'https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80' }}></Image>
+                <Image style={styles.background} source={{ uri: this.state.background ? this.state.background : 'https://images.unsplash.com/photo-1485083269755-a7b559a4fe5e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80' }}></Image>
             </View>
         )
     }

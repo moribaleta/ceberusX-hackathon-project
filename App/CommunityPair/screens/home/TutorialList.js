@@ -1,40 +1,44 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet,FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList,ScrollView } from "react-native";
 import TutorialCell from "./TutorialCell"
-import {getSampleTrainingModule} from '../../utilities/utilities'
+import { getSampleTrainingModule, appState } from '../../utilities/utilities'
 
 export default class TutorialList extends Component {
 
+
     state = {
-        list : []
+        list: []
     }
 
-    componentDidMount(){
+    componentDidMount() {
         let list = getSampleTrainingModule()
-        this.setState({list : list})
+        this.setState({ list: list })
     }
 
-    onSelectItem() {
-        self.props.navigation.push()
+    onSelectItem(item) {
+        appState.item = item
+        this.props.navigation.push('TutorialView')
     }
 
     render() {
         return (
-            <View style={styles.container}>
-                <FlatList 
+
+            <ScrollView style={styles.container}>
+                <Text style={styles.header}>Home</Text>
+                <FlatList
                     style={styles.list}
-                    data={this.state.list} 
+                    data={this.state.list}
                     renderItem={(item) => {
-                        return <TutorialCell 
+                        return <TutorialCell
                             onPress={() => {
-                                self.onSelectItem()
+                                this.onSelectItem(item.item)
                             }}
-                            item={item.item} 
+                            item={item.item}
                             index={item.index} />
                     }}
-                    
+
                 />
-            </View>
+            </ScrollView>
         )
     }
 }
@@ -44,10 +48,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    message : {
+    message: {
 
     },
     list: {
         flex: 1
+    },
+    header: {
+        fontSize: 32,
+        padding: 10,
+        fontWeight: 'bold'
     }
 })

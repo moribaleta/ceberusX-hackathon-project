@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Alert } from "react-native";
 import Form from "./Form"
+import { appState } from "../../utilities/utilities";
 
 export default class ExamView extends Component {
 
@@ -10,7 +11,7 @@ export default class ExamView extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            item: props.item,
+            item: appState.item,
             openExam: false
         }
 
@@ -30,12 +31,14 @@ export default class ExamView extends Component {
             'Success',
             'you have finished the exam',
             [
-              {text: 'OK', onPress: () => {
-                  this.openExam(false)
-              }},
+                {
+                    text: 'OK', onPress: () => {
+                        this.openExam(false)
+                    }
+                },
             ],
-            {cancelable: false},
-          );
+            { cancelable: false },
+        );
     }
 
     render() {
@@ -43,12 +46,14 @@ export default class ExamView extends Component {
             <View style={styles.container}>
                 <ScrollView>
                     <Text style={styles.title}>{this.state.item.employer_id}</Text>
-                    <Image style={styles.backgroundImage} source={{ uri: 'https://images.unsplash.com/photo-1546552356-3fae876a61ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=2855&q=80' }} />
+                    <Image style={[styles.backgroundImage, this.state.openExam ? {height: 80} : null ]} source={{ uri: this.state.item.imageUrl }} />
                     <Text style={styles.description}>{this.state.item.description}</Text>
+                    <View style={styles.button_container}>
+                        <TouchableOpacity style={styles.takeExam} onPress={() => { this.openExam(!this.state.openExam) }}>
+                            <Text>{this.state.openExam ? "Cancel Exam" : "Open Exam"}</Text>
+                        </TouchableOpacity>
+                    </View>
 
-                    <TouchableOpacity style={styles.takeExam} onPress={() => { this.openExam(!this.state.openExam) }}>
-                        <Text>{this.state.openExam ? "Cancel Exam" : "Open Exam"}</Text>
-                    </TouchableOpacity>
 
                     {
                         (this.state.openExam) ?
@@ -63,22 +68,25 @@ export default class ExamView extends Component {
 
     renderForm() {
         return (
-        <View style={styles.form_container}>
-            <Form
-                item={this.props.item}
-                ref={
-                    (ref) => {
-                        this.formviewer = ref
+            <View style={styles.form_container}>
+                <Form
+                    item={this.state.item}
+                    ref={
+                        (ref) => {
+                            this.formviewer = ref
+                        }
                     }
-                }
-                style={styles.form}
-            />
-            <TouchableOpacity
-                style={styles.takeExam}
-                onPress={() => { this.onSave() }}>
-                <Text>Save</Text>
-            </TouchableOpacity>
-        </View>
+                    style={styles.form}
+                />
+                <View style={styles.button_container}>
+                    <TouchableOpacity
+                        style={styles.takeExam}
+                        onPress={() => { this.onSave() }}>
+                        <Text>Save</Text>
+                    </TouchableOpacity>
+                </View>
+
+            </View>
         )
     }
 }
@@ -91,10 +99,16 @@ const styles = StyleSheet.create({
         alignItems: 'stretch'
     },
     title: {
-        fontSize: 18
+        fontSize: 24,
+        position: 'absolute',
+        zIndex: 1,
+        padding: 10,
+        color: '#ffffff',
+        fontWeight: 'bold'
     },
     description: {
-        marginBottom: 10
+        marginBottom: 10,
+        padding: 10
     },
 
     backgroundImage: {
@@ -109,6 +123,11 @@ const styles = StyleSheet.create({
 
     form: {
         flex: 1
+    },
+
+    button_container: {
+        width : '100%',
+        alignItems: 'center'
     },
 
     takeExam: {

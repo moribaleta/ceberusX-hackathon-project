@@ -77,21 +77,6 @@ export default class ExamList extends Component {
         return (
             <View style={styles.entryContainer}>
                 <Text>{item.labelname}</Text>
-                {/* <Picker
-                    selectedValue={item.value}
-                    style={styles.picker}
-                    mode={'dropdown'}
-                    onValueChange={(itemValue, itemIndex) =>
-                        this.changeValue(itemValue, index)
-                    }>
-                    {
-                        item.options.map((option) => {
-                            return <Picker.Item label={option} value={option} />
-                        })
-                    }
-                </Picker>
-                <Text style={styles.text}> {item.value}</Text>  */}
-
 
                 <RNPickerSelect
                     style={styles.picker}
@@ -123,8 +108,9 @@ const styles = StyleSheet.create({
 
     textInput: {
         borderColor: "#333333",
-        borderWidth: 1,
+        borderWidth: 0.5,
         padding: 5,
+        borderRadius: 5
     },
 
     picker: {

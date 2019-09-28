@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, StyleSheet,ListView } from "react-native";
 import {Employer} from "../../utilities/utilities"
 import CardView from '../../components/card'
+import { TouchableHighlight, TouchableOpacity } from "react-native-gesture-handler";
 
 export default class ExamCell extends Component {
 
@@ -19,11 +20,15 @@ export default class ExamCell extends Component {
             console.log("state %o", this.state)
             console.log("name: %s", this.state.item.employer_id)
             return (
-                <View style={styles.entry}>
+                <TouchableOpacity 
+                    style={styles.entry}
+                    onPress={this.props.onPress}
+                    >
                     <CardView 
                         name={this.state.item.employer_id} 
+                        image={this.state.item.imageUrl}
                         />
-                </View>
+                </TouchableOpacity>
             )
         }else{
             console.log("dafuq")

@@ -31,11 +31,14 @@ import HomeScreen from './screens/home/Home'
 
 const App: () => React$Node = () => {
   return (    
-    <SafeAreaView style={styles.container}>
-      <HomeScreen/>
-    </SafeAreaView>
+    <HomeScreen/>
+    
   );
 };
+
+{/* <SafeAreaView style={styles.container}>
+      <HomeScreen/>
+    </SafeAreaView> */}
 
 const styles = StyleSheet.create({
   container: {
