@@ -7,11 +7,17 @@ class HttpClient {
 
     ///function for implementing fetch returns a promise for response
     get(url, param) {
-        return fetch(url, param)
+        return fetch(url, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            }
+        })
     }
 
     ///function for implementing post returns a promise for repose
-    post(url, param ) {
+    post(url, param) {
         return fetch(url, {
             method: 'POST',
             headers: {
@@ -22,5 +28,5 @@ class HttpClient {
         })
     }
 }//HttpClient
-
-var httpClient = new HttpClient()
+const httpClient = new HttpClient()
+export default httpClient

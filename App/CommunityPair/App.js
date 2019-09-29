@@ -28,8 +28,13 @@ import {
 
 import HomeScreen from './screens/home/Home'
 
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Remote debugger']);
+
 
 const App: () => React$Node = () => {
+  console.ignoredYellowBox = ['Remote debugger'];
+
   return (    
     <HomeScreen/>
     

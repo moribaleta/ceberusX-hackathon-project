@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Image, Linking, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image, ScrollView, Linking, TouchableOpacity } from "react-native";
 
 export default class Profile extends Component {
 
@@ -17,10 +17,13 @@ export default class Profile extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Image style={styles.image} source={{ uri: "https://www.phnompenhpost.com/sites/default/files/styles/image_780x440/public/field/image/9-ph.jpg?itok=0bpAiOvF" }}></Image>
-                <Text style={styles.name}>Jason Saguido</Text>
-                <Text style={styles.status}>Available</Text>
+            <ScrollView style={styles.container}>
+                <View style={styles.image_container}>
+                    <Image style={styles.image} source={{ uri: "https://www.phnompenhpost.com/sites/default/files/styles/image_780x440/public/field/image/9-ph.jpg?itok=0bpAiOvF" }}></Image>
+                    <Text style={styles.name}>Jason Saguido</Text>
+                    <Text style={styles.status}>Available</Text>
+                </View>
+
                 <View style={styles.message_container}>
                     <Text style={styles.label}>Pre Exam Result</Text>
                     <Text style={styles.value}>Has accomplished required Pre Exam Result</Text>
@@ -41,7 +44,7 @@ export default class Profile extends Component {
                     </View>
                 </TouchableOpacity>
 
-            </View>
+            </ScrollView>
         )
     }
 
@@ -50,10 +53,10 @@ export default class Profile extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'flex-start',
+        /* alignItems: 'center', */
+        /* justifyContent: 'flex-start', */
         padding: 10,
-        backgroundColor: '#d9d1c9'
+        backgroundColor: '#EFF0F1'
     },
 
     image: {
@@ -74,25 +77,35 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
 
+    image_container: {
+        width: '100%',
+        alignItems: 'center'
+    },
+
     message_container: {
-        marginBottom: 10,
+        marginBottom: 5,
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
         width: '100%',
         backgroundColor: '#ffffff',
         padding: 10,
-        borderRadius: 10
+        borderRadius: 5
     },
 
     button: {
-        backgroundColor : '#28b9aa',
+        backgroundColor: '#28b9aa',
         width: '100%',
         height: 40,
         borderRadius: 20,
         alignItems: 'center',
         justifyContent: 'center',
         paddingRight: 20,
-        paddingLeft: 20
+        paddingLeft: 20,
+        marginTop: 20,
+    },
+
+    button_text: {
+        color: '#ffffff'
     }
 
 })

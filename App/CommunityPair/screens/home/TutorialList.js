@@ -3,6 +3,9 @@ import { View, Text, StyleSheet, FlatList,ScrollView } from "react-native";
 import TutorialCell from "./TutorialCell"
 import { getSampleTrainingModule, appState } from '../../utilities/utilities'
 
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings(['Remote debugger']);
+
 export default class TutorialList extends Component {
 
 
@@ -10,9 +13,16 @@ export default class TutorialList extends Component {
         list: []
     }
 
+    constructor(props){
+        super(props)
+        console.ignoredYellowBox = ['Remote debugger'];
+    }
+
     componentDidMount() {
         let list = getSampleTrainingModule()
         this.setState({ list: list })
+
+        appState.load()
     }
 
     onSelectItem(item) {

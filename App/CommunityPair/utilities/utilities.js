@@ -3,9 +3,26 @@ class NavProps {
   navigation
 }
 
+import httpClient from './httprequest'
+
 
 class AppState {
   item
+
+  trainingModule 
+  examModule 
+  preExamModule
+
+  baseUrl = "http://192.168.30.106/"
+
+  constructor(){
+
+  }
+
+  load(){
+  }
+
+
 }
 
 export var appState = new AppState()
@@ -36,7 +53,7 @@ export function getSampleTrainingModule() {
   maid.name = "Housekeeping"
   maid.type = "Housekeeping"
   maid.createdby = "user"
-  maid.imageUrl = "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2851&q=80"
+  maid.imageUrl = "https://www.healthyhomesutah.com/wp-content/uploads/House-Cleaning-Service-in-Kaysville-845x321.jpg"
   maid.description = "Perform any combination of light cleaning duties to maintain private households or commercial establishments, such as hotels and hospitals, in a clean and orderly manner. Duties may include making beds, replenishing linens, cleaning rooms and halls, and vacuuming."
   maid.submodules = ["https://drive.google.com/file/d/157jDEKnzgI-ysW259H_usV3uXWSlscKP/view?usp=sharing", "https://drive.google.com/file/d/1qLrt6iRbwQi8ynVGF9P2RNo0yFF5MnBY/view?usp=sharing"]
 
