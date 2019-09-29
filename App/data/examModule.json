@@ -1,0 +1,47 @@
+{
+    "id": "",
+    "employer_id": "HouseKeeping - ",
+    "exam_date": "09/29/2019",
+    "entries": [
+      {
+        "id": "8",
+        "type": "text",
+        "options": [],
+        "labelname": "1. What are some of the things you do in the house to keep it clean?",
+        "value": ""
+      },
+      {
+        "id": "9",
+        "type": "text",
+        "options": [],
+        "labelname": "2. What is your strength as a good domestic helper?",
+        "value": ""
+      },
+      {
+        "id": "10",
+        "type": "text",
+        "options": [],
+        "labelname": "3. What `type` of kitchen appliances do you know how to use?",
+        "value": ""
+      },
+
+      {
+        "id": "11",
+        "type": "text",
+        "options": [""],
+        "labelname": "4. What are some of the things you do in the kitchen to keep it clean?",
+        "value": ""
+      },
+
+      {
+        "id": "12",
+        "type": "text",
+        "options": [""],
+        "labelname": "5. If the president was visiting your house. What is the best meal you would cook and serve him?",
+        "value": ""
+      }
+    ],
+    "createddate": "09/29/2019",
+    "description": "This exam is for Housekeeping",
+    "imageUrl": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&ix"id"=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+  }

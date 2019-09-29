@@ -1,0 +1,19 @@
+{
+    "items": [{
+        "id":"1",
+        "name":"Welding 1",
+        "type":"Welding",
+        "createdby":"user",
+        "imageUrl":"https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80",
+        "description":"basic welding continuing education unit professional development course",
+        "submodules":["https://drive.google.com/file/d/1RZ7NrwmBq55MWhe2NsXbLLtkMkEAo3gd/view?usp=sharing", "https://drive.google.com/file/d/1iLiMO4nyRoAWGKGrfRMoL7Ph7XLRCBpW/view?usp=sharing"]
+    }, {
+        "id":"2",
+        "name":"Housekeeping",
+        "type":"Housekeeping",
+        "createdby":"user",
+        "imageUrl":"https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2851&q=80",
+        "description":"Perform any combination of light cleaning duties to maintain private households or commercial establishments, such as hotels and hospitals, in a clean and orderly manner. Duties may include making beds, replenishing linens, cleaning rooms and halls, and vacuuming.",
+        "submodules":["https://drive.google.com/file/d/157jDEKnzgI-ysW259H_usV3uXWSlscKP/view?usp=sharing", "https://drive.google.com/file/d/1qLrt6iRbwQi8ynVGF9P2RNo0yFF5MnBY/view?usp=sharing"]
+    }]
+}

@@ -3,6 +3,8 @@
  */
 class HttpClient {
 
+    urlhost = ""
+
     ///function for implementing fetch returns a promise for response
     get(url, param) {
         return fetch(url, param)
